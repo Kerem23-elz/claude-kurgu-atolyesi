@@ -6,6 +6,7 @@ import rawPlan from "../work/edit-plan.json";
 import { planSchema } from "./plan/schema";
 import { GraphicsLayer, GraphicsLayerProps } from "./compositions/GraphicsLayer";
 import { ShortOverlay, ShortProps } from "./compositions/ShortOverlay";
+import { LogoAnimation } from "./scenes/LogoAnimation";
 
 // The editorial plan is data (work/edit-plan.json); it is validated once here.
 const plan = planSchema.parse(rawPlan);
@@ -43,6 +44,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Preview" component={GraphicsLayer} width={1920} height={1080} fps={60} durationInFrames={1} defaultProps={{ plan, showProxy: true }} calculateMetadata={calculateMetadata} />
       {/* Transparent graphics only — this is what scripts/60-render-segments.mjs renders at scale 2. */}
       <Composition id="Graphics" component={GraphicsLayer} width={1920} height={1080} fps={60} durationInFrames={1} defaultProps={{ plan, showProxy: false }} calculateMetadata={calculateMetadata} />
+      {/* Kapanış kartı: logo animasyonu — 5.4s, 30fps, 1080×1920 Reels */}
+      <Composition id="LogoCard" component={LogoAnimation} width={1080} height={1920} fps={30} durationInFrames={162} />
     </>
   );
 };

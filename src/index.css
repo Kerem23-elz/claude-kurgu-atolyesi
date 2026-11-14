@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 /* Global baseline — Tailwind resets color to black; override for all Remotion compositions */
-body, #remotion-canvas, #remotion-player, [data-remotion-canvas] {
-  color: #FFF4E3; /* color.text — krem */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  color: #FFF4E3 !important; /* color.text — krem; Tailwind base resets to black */
   background: transparent;
 }
