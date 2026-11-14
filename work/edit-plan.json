@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "source": { "path": "public/main.mov", "fps": 30, "frames": 900, "durationSeconds": 30 },
+  "source": { "path": "public/main.mov", "fps": 30, "frames": 1268, "durationSeconds": 42.266667 },
   "language": "tr",
   "notes": [
     "DEMO PLAN — gerçek bir video değil. Şemayı (src/plan/schema.ts) ve yazım biçimini göstermek için var.",
@@ -8,7 +8,7 @@
     "Her olay destekleyen transcript cümlesini ve bir reason taşır. Rakamlar yalnızca konuşmada geçenlerdir."
   ],
   "unusedAssets": [],
-  "quietSections": [{ "start": 24, "end": 26, "reason": "Kişisel ara söz; grafik anlatımı bölerdi." }],
+  "quietSections": [{ "start": 24, "end": 26, "reason": "Kişisel ara söz; grafik anlatımı bölerdi." }, { "start": 36, "end": 38, "reason": "Kapanış öncesi nefes alanı." }],
   "events": [
     {
       "id": "E01", "type": "kinetic", "start": 0.4, "end": 5.2, "side": "full",
@@ -44,11 +44,11 @@
       ] }
     },
     {
-      "id": "E05", "type": "social", "start": 26.5, "end": 30, "side": "right",
+      "id": "E05", "type": "social", "start": 38, "end": 42.2, "side": "right",
       "position": "sağ üst kapanış kartı", "enter": "kayarak", "exit": "video sonu",
-      "transcript": "Kanala abone olmayı unutma.",
+      "transcript": "Takip etmeyi unutmayın.",
       "reason": "Kapanış kartı (markada tanımlı).",
-      "content": { "kicker": "TAKİP ET", "handle": "@kanal_adin", "cta": { "at": 27, "text": "Kanala abone olmayı unutma :)" } }
+      "content": { "kicker": "TAKİP ET", "handle": "@drtubaozturkdemir", "cta": { "at": 38.5, "text": "drtubaozturkdemir.com" } }
     }
   ]
 }

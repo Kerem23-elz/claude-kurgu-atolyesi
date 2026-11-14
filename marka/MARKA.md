@@ -4,7 +4,8 @@
 
 ## 1. Kanal
 
-- **Kanal adı / handle:** @uzmdr.tubaozturkdemir (veya benzeri medikal estetik kanalı)
+- **Kanal adı / handle:** @drtubaozturkdemir
+- **İnternet sitesi:** drtubaozturkdemir.com
 - **Konu:** Medikal estetik ve longevity (cilt bakımı, anti-aging, estetik tıp, uzun yaşam bilimi)
 - **İzleyici:** Doğal ve bilimsel güzellik arayan kadın (25–55), cilt sağlığına yatırım yapan, ürün/fiyat değil uzmanlık arayan
 - **Videonun dili / ekran yazılarının dili:** Türkçe
