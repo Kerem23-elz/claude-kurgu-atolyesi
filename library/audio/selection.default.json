@@ -22,9 +22,9 @@
   ],
   "levels": {
     "musicDb": -22,
-    "sfxDb": -11,
+    "sfxDb": -13,
     "duck": true,
-    "duckRatio": 1.6,
+    "duckRatio": 1.4,
     "fadeIn": 1.5,
     "fadeOut": 4
   }

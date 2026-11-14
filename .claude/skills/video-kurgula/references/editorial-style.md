@@ -39,7 +39,9 @@ When the two conflict, **Ev kuralları win**.
      - YYYY-MM-DD · <the rule, imperative> — "<the user's own words>"
      Keep the list short and concrete. Remove a rule only when the user reverses it. -->
 
-_(henüz kural yok — ilk videonun revizyonlarından sonra dolmaya başlar)_
+- 2026-11-14 · Yapay AI sesi (TTS, voice clone) hiçbir videoda kullanma — "yapay ai sesi ... beğendiğim şeyler değil"
+- 2026-11-14 · Reklam, fiyat, promosyon, ürün tanıtımı bilgileri ekran yazısına girmesin — "reklam fiyar gibi bilgiler"
+- 2026-11-14 · Kapanış kartı her zaman logo olsun; subscribe / abone kartı ekleme — "grafik kapanış logo"
 
 ## Event catalogue (type → use)
 
