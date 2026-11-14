@@ -1,19 +1,35 @@
 // MARKA TOKENLARI — Uzm. Dr. Tuba Öztürk Demir · Medikal Estetik & Longevity
 // "Doğal Güzelliğin Bilimle Buluştuğu Yer" · Turuncu-krem sıcaklığı, zarif serif başlık
 // Tüm bileşenler değerleri buradan okur. Single source of truth.
-import { loadFont as loadCormorant } from "@remotion/google-fonts/CormorantGaramond";
-import { loadFont as loadDM } from "@remotion/google-fonts/DMSans";
-import { loadFont as loadMono } from "@remotion/google-fonts/JetBrainsMono";
+//
+// Fontlar local olarak public/fonts/ klasöründen yüklenir (proxy CA sorunundan kaçınmak için).
+// Remotion'ın continueRender/delayRender mekanizması Root.tsx'te yönetilir.
+import { continueRender, delayRender, staticFile } from "remotion";
 
-// latin-ext carries the Turkish glyphs (ç ğ ı İ ö ş ü). Rendering blocks until fonts are ready.
-const display = loadCormorant("normal", { weights: ["600", "700"], subsets: ["latin", "latin-ext"] });
-const text = loadDM("normal", { weights: ["400", "500", "700"], subsets: ["latin", "latin-ext"] });
-const mono = loadMono("normal", { weights: ["500", "700"], subsets: ["latin", "latin-ext"] });
+// Font family isimleri @remotion/google-fonts paket meta verisiyle eşleşmeli
+export const FONT_DISPLAY = "Cormorant Garamond";
+export const FONT_TEXT = "DM Sans";
+export const FONT_MONO = "JetBrains Mono";
+
+// Çağrıldığında local CSS dosyasını document'e ekler ve render'ı bekletir.
+export function loadLocalFonts(): void {
+  if (typeof document === "undefined") return;
+  const id = "__local-fonts-css__";
+  if (document.getElementById(id)) return; // zaten yüklendi
+  const handle = delayRender("local-fonts");
+  const link = document.createElement("link");
+  link.id = id;
+  link.rel = "stylesheet";
+  link.href = staticFile("fonts/fonts.css");
+  link.onload = () => continueRender(handle);
+  link.onerror = () => continueRender(handle); // font olmasa da devam et
+  document.head.appendChild(link);
+}
 
 export const font = {
-  display: `${display.fontFamily}, Georgia, serif`,
-  text: `${text.fontFamily}, sans-serif`,
-  mono: `${mono.fontFamily}, ui-monospace, monospace`,
+  display: `"${FONT_DISPLAY}", Georgia, serif`,
+  text: `"${FONT_TEXT}", sans-serif`,
+  mono: `"${FONT_MONO}", ui-monospace, monospace`,
 };
 
 // sRGB authoring values. In the HLG master, #FFFFFF maps to 203 cd/m² (75 % HLG) — never pure white surfaces.

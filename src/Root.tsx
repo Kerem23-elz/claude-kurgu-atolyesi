@@ -1,6 +1,7 @@
 import "./index.css";
 import React from "react";
 import { CalculateMetadataFunction, Composition } from "remotion";
+import { loadLocalFonts } from "./theme/theme";
 import rawPlan from "../work/edit-plan.json";
 import { planSchema } from "./plan/schema";
 import { GraphicsLayer, GraphicsLayerProps } from "./compositions/GraphicsLayer";
@@ -8,6 +9,9 @@ import { ShortOverlay, ShortProps } from "./compositions/ShortOverlay";
 
 // The editorial plan is data (work/edit-plan.json); it is validated once here.
 const plan = planSchema.parse(rawPlan);
+
+// Load local fonts once at module level (browser only — no-op in Node.js bundler)
+loadLocalFonts();
 
 // Timeline = the verified source cadence and length recorded in the plan (never hardcoded here).
 const calculateMetadata: CalculateMetadataFunction<GraphicsLayerProps> = ({ props }) => ({

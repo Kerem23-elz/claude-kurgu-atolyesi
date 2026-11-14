@@ -3,52 +3,164 @@
   "source": { "path": "public/main.mov", "fps": 30, "frames": 1268, "durationSeconds": 42.266667 },
   "language": "tr",
   "notes": [
-    "DEMO PLAN — gerçek bir video değil. Şemayı (src/plan/schema.ts) ve yazım biçimini göstermek için var.",
-    "Zamanlar kaynak zaman çizelgesinde mutlak saniyedir; her öğe, onu söyleyen kelimenin zamanında (at) gelir.",
-    "Her olay destekleyen transcript cümlesini ve bir reason taşır. Rakamlar yalnızca konuşmada geçenlerdir."
+    "Erkek medikal estetik Reels — 42.27s, 1080×1920, SDR BT.709.",
+    "Transcript: kurgu-araci/projects/20261114-110447-234ec3/project.json (faster-whisper, Türkçe).",
+    "Kelime zamanları ±0.1s hassasiyetle doğrulandı. Hiçbir rakam veya iddia konuşmada geçenin dışına çıkmaz.",
+    "Marka: dengeli-yoğun, kapanış @drtubaozturkdemir + drtubaozturkdemir.com, yapay AI sesi yok."
   ],
   "unusedAssets": [],
-  "quietSections": [{ "start": 24, "end": 26, "reason": "Kişisel ara söz; grafik anlatımı bölerdi." }, { "start": 36, "end": 38, "reason": "Kapanış öncesi nefes alanı." }],
+  "quietSections": [
+    {
+      "start": 23.68, "end": 25.72,
+      "reason": "\"O noktada işimiz biraz zorlaşıyor\" — kısa kişisel not, grafik anlatımı bölerdi; E04 kapanmış, E05 henüz açılmamış."
+    }
+  ],
   "events": [
     {
-      "id": "E01", "type": "kinetic", "start": 0.4, "end": 5.2, "side": "full",
-      "position": "tam ekran tez, ortalı", "enter": "kelime kelime", "exit": "sönerek",
-      "transcript": "Videolarımı artık kod yazarak kurguluyorum.",
-      "reason": "Videonun vaadi; ilk saniyelerde net bir tez.",
-      "content": { "kicker": "BU VİDEODA", "align": "center", "lines": [
-        { "at": 0.6, "text": "Videolarımı artık", "accent": [] },
-        { "at": 1.8, "text": "kod yazarak kurguluyorum.", "accent": ["kod"] }
-      ] }
+      "id": "E01",
+      "type": "punch",
+      "start": 0.1,
+      "end": 5.0,
+      "layer": 2,
+      "side": "full",
+      "position": "tam ekran sticker, ortalı — hook",
+      "enter": "pop snap",
+      "exit": "sönerek",
+      "transcript": "Hocam eşimi yıllardır gençleştiriyorsunuz, ben yaşlanıyorum kadın yerinde sayıyor",
+      "reason": "İzleyiciyi 1.5s içinde çeken hook: hastanın ironik şikayeti iki sticker satırla verilir; ikinci satır vurgu renginde.",
+      "content": {
+        "locale": "tr",
+        "lines": [
+          { "at": 0.6,  "text": "EŞİMİ GENÇLEŞTİRİYORSUNUZ", "accent": false },
+          { "at": 2.34, "text": "BEN YAŞLANIYORUM",            "accent": true }
+        ]
+      }
     },
     {
-      "id": "E02", "type": "tag", "start": 6, "end": 20, "side": "left",
-      "position": "sol üst, bölüm boyunca", "enter": "nokta + metin", "exit": "sönerek",
-      "transcript": "İlk olarak kurulumdan başlayalım.",
-      "reason": "Bölüm etiketi = YouTube bölüm listesi.",
-      "content": { "index": "01", "label": "KURULUM" }
+      "id": "E02",
+      "type": "story-glass",
+      "start": 5.6,
+      "end": 8.5,
+      "layer": 1,
+      "side": "right",
+      "position": "sağ üst, V1 band konuşmacının üstünde",
+      "enter": "kayarak sağdan",
+      "exit": "sönerek",
+      "transcript": "Erkek hastalarımdan en sık duyduğum cümleler bunlar.",
+      "reason": "Dr. Tuba'nın sesini bağlam kartıyla destekler; glass panel klinik not defteri hissini verir.",
+      "content": {
+        "kicker": "ERKEK HASTA",
+        "headline": "En sık duyduğum cümleler bunlar"
+      }
     },
     {
-      "id": "E03", "type": "callout", "start": 7, "end": 13, "side": "right",
-      "position": "sağ üst panel", "enter": "kayarak", "exit": "sönerek",
-      "transcript": "Tek ihtiyacın Claude Code ve birkaç ücretsiz araç.",
-      "reason": "Bölümün ana cümlesi.",
-      "content": { "kicker": "KURULUM", "headline": "Tek ihtiyacın Claude Code", "sub": "+ birkaç ücretsiz araç", "subAt": 9.5 }
+      "id": "E03",
+      "type": "kinetic",
+      "start": 8.9,
+      "end": 14.8,
+      "layer": 2,
+      "side": "full",
+      "position": "tam ekran L5 tez, ortalı",
+      "enter": "kelime kelime yukarıdan",
+      "exit": "sönerek",
+      "transcript": "Artık erkekler de daha dinç, daha bakımlı, daha iyi görünmek istiyor ama tek bir şartla işlem yapıldığı anlaşılmasın.",
+      "reason": "Videonun ana tezi; 'anlaşılmasın' vurgu kelimesi — L5 kinetic ile maksimum etki.",
+      "content": {
+        "kicker": "TEK ŞART",
+        "align": "center",
+        "lines": [
+          { "at": 8.9,  "text": "Erkekler de görünmek istiyor,", "accent": ["görünmek"] },
+          { "at": 12.56, "text": "ama anlaşılmasın.", "accent": ["anlaşılmasın"] }
+        ]
+      }
     },
     {
-      "id": "E04", "type": "list", "start": 13.5, "end": 21, "side": "right",
-      "position": "sağ üst panel", "enter": "kayarak", "exit": "sönerek",
-      "transcript": "Node, FFmpeg ve Whisper. Gerisini Claude kuruyor.",
-      "reason": "Söylenen üç araç, söylendikleri anda.",
-      "content": { "kicker": "ARAÇLAR", "title": "Gerekenler", "marker": "check", "items": [
-        { "at": 14, "text": "Node.js" }, { "at": 15.2, "text": "FFmpeg" }, { "at": 16.4, "text": "Whisper" }
-      ] }
+      "id": "E04",
+      "type": "compare",
+      "start": 15.8,
+      "end": 23.3,
+      "layer": 1,
+      "side": "right",
+      "position": "sağ panel, iki sütun sol-sağ",
+      "enter": "kayarak sağdan",
+      "exit": "sönerek",
+      "transcript": "Kadınlar genellikle daha erken yaşlı ve daha düzenli bakım yaptırıyor. Erkekler ise çoğu zaman yaşlanma belirtileri iyice ortaya çıkınca geliyor.",
+      "reason": "Konuşmada doğrudan yapılan kadın-erkek karşılaştırması iki sütunla görselleştirilir.",
+      "content": {
+        "kicker": "FARK",
+        "left": {
+          "title": "Kadınlar",
+          "at": 15.8,
+          "items": [
+            { "at": 16.4,  "text": "Daha erken yaşta" },
+            { "at": 18.06, "text": "Düzenli bakım" }
+          ]
+        },
+        "right": {
+          "title": "Erkekler",
+          "at": 19.5,
+          "items": [
+            { "at": 20.5, "text": "Yaşlanma belirtileri çıkınca" }
+          ]
+        }
+      }
     },
     {
-      "id": "E05", "type": "social", "start": 38, "end": 42.2, "side": "right",
-      "position": "sağ üst kapanış kartı", "enter": "kayarak", "exit": "video sonu",
+      "id": "E05",
+      "type": "story-glass",
+      "start": 25.8,
+      "end": 34.4,
+      "layer": 1,
+      "side": "left",
+      "position": "sol üst, V1 band",
+      "enter": "kayarak soldan",
+      "exit": "sönerek",
+      "transcript": "O yüzden beyler, çizgiler derinleşmeden, küçük dokunuşlarla başlamak hem daha kolay hem de daha doğal sonuç verir.",
+      "reason": "Tavsiye mesajı; glass panel 'klinik not' hissiyle otorite kurar. Alt satır 'küçük dokunuşlar' kelimeleriyle senkron açılır.",
+      "content": {
+        "kicker": "TAVSİYE",
+        "headline": "Çizgiler derinleşmeden başlayın",
+        "sub": "Küçük dokunuşlar — daha kolay, daha doğal sonuç",
+        "subAt": 30.58
+      }
+    },
+    {
+      "id": "E06",
+      "type": "kinetic",
+      "start": 35.1,
+      "end": 38.2,
+      "layer": 2,
+      "side": "full",
+      "position": "tam ekran kapanış tezi, ortalı",
+      "enter": "kelime kelime",
+      "exit": "sönerek",
+      "transcript": "Amacımız sizi değiştirmek değil, daha dinlenmiş ve dinç göstermek.",
+      "reason": "Marka vaadi cümlesini kapatmadan önce L5 ile vurgular — izleyicide iz bırakan son mesaj.",
+      "content": {
+        "align": "center",
+        "lines": [
+          { "at": 35.1,  "text": "Değiştirmek değil,", "accent": [] },
+          { "at": 36.76, "text": "dinlenmiş göstermek.", "accent": ["dinlenmiş"] }
+        ]
+      }
+    },
+    {
+      "id": "E07",
+      "type": "social",
+      "start": 38.7,
+      "end": 42.0,
+      "layer": 1,
+      "side": "right",
+      "position": "sağ üst kapanış kartı",
+      "enter": "kayarak sağdan",
+      "exit": "video sonu",
       "transcript": "Takip etmeyi unutmayın.",
-      "reason": "Kapanış kartı (markada tanımlı).",
-      "content": { "kicker": "TAKİP ET", "handle": "@drtubaozturkdemir", "cta": { "at": 38.5, "text": "drtubaozturkdemir.com" } }
+      "reason": "Kapanış kartı — MARKA.md: handle + website, abone kartı yok.",
+      "content": {
+        "kicker": "TAKİP ET",
+        "handle": "@drtubaozturkdemir",
+        "cta": { "at": 39.0, "text": "drtubaozturkdemir.com" }
+      }
     }
   ]
 }
