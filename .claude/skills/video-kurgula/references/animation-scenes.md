@@ -29,6 +29,8 @@ Not for things a board (L2) already handles in 5 s.
 | **Çizgi illüstrasyon** | flat 2D vector, thick uniform outline, flat fills, no gradients/shadows, warm off-white ground | friendly explainers, metaphors; use sparingly (it breaks a dark board, so give it its own chapter moment) |
 | **HUD / simülasyon** | dark map or scene with live telemetry readouts (counters, gauges, progress) | "watch it happen" moments: sales coming in, downloads ticking, a build running |
 
+| **Dünya / Bölge** | basitleştirilmiş SVG dünya silüeti + büyüyen yatay bar'lar; emphasis=max değer, accent renk parıltısı; annotasyon bölge adı + değer | klinik çalışma menşei, global tedavi yaygınlığı, longevity istatistikleri |
+
 Characters with lip-sync and dialogue scenes are out of scope unless the user asks (they need voice assets).
 
 ## How to build one (from the CLI)

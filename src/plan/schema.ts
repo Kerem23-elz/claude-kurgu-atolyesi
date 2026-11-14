@@ -254,7 +254,44 @@ const tag = base.extend({
   content: z.object({ index: z.string(), label: z.string(), total: z.string().optional() }),
 });
 
-export const eventSchema = z.discriminatedUnion("type", [headline, callout, list, cards, phone, insert, steps, bars, search, versus, stat, social, sceneTool, screen, hook, punch, chapter, compare, stage, kinetic, subscribe, tag]);
+// ── Reels effects (Dr. Tuba Öztürk Demir medikal estetik kanalı) ─────────────────────────────
+// frame-break : angular corner frame that breaks outward — full-screen hook / reveal
+// story-glass : frosted-glass warm side panel — V1 Reels band overlay
+// world-chart : globe silhouette + regional growing bars — global data scene (L4)
+const frameBreak = base.extend({
+  type: z.literal("frame-break"),
+  content: z.object({
+    text: z.string().min(1),
+    breakAt: t,
+    sub: z.string().optional(),
+    locale: z.enum(["tr", "en"]).default("tr"),
+  }),
+});
+const storyGlass = base.extend({
+  type: z.literal("story-glass"),
+  content: z.object({
+    kicker: z.string().optional(),
+    headline: z.string().min(1),
+    sub: z.string().optional(),
+    subAt: t.optional(),
+  }),
+});
+const worldChart = base.extend({
+  type: z.literal("world-chart"),
+  content: z.object({
+    kicker: z.string(),
+    title: z.string().min(1),
+    bars: z.array(z.object({
+      at: t,
+      region: z.string().min(1),
+      value: z.number().positive(),
+      display: z.string().min(1),
+    })).min(2),
+    footnote: z.string().optional(),
+  }),
+});
+
+export const eventSchema = z.discriminatedUnion("type", [headline, callout, list, cards, phone, insert, steps, bars, search, versus, stat, social, sceneTool, screen, hook, punch, chapter, compare, stage, kinetic, subscribe, tag, frameBreak, storyGlass, worldChart]);
 export const planSchema = z.object({
   version: z.literal(1),
   source: z.object({ path: z.string(), fps: z.number().positive(), frames: z.number().int().positive(), durationSeconds: z.number().positive() }),

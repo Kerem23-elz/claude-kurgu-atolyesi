@@ -12,6 +12,8 @@ import { SceneTool } from "../events/SceneEvents";
 import { Chapter, Compare, Hook, Punch, Screen } from "../events/ScreenEvents";
 import { Stage } from "../events/StageEvents";
 import { Kinetic, Subscribe, Tag } from "../events/BrandEvents";
+import { FrameBreak, StoryGlass } from "../events/ReelsEffects";
+import { WorldChart } from "../scenes/WorldChart";
 
 export type GraphicsLayerProps = { plan: EditPlan; showProxy: boolean };
 
@@ -39,6 +41,9 @@ const render = (event: PlanEvent) => {
     case "kinetic": return <Kinetic event={event} />;
     case "subscribe": return <Subscribe event={event} />;
     case "tag": return <Tag event={event} />;
+    case "frame-break": return <FrameBreak event={event} />;
+    case "story-glass": return <StoryGlass event={event} />;
+    case "world-chart": return <WorldChart event={event} />;
   }
 };
 

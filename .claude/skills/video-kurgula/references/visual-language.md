@@ -83,12 +83,15 @@ long-form unless `MARKA.md` says so (the SRT goes to YouTube).
 
 | Piece | Kind | Status |
 |---|---|---|
-| theme tokens (`font`, `color`, `type`, `motion`, `layout`) | theme | starter theme — `marka-kimligi` rewrites it |
+| theme tokens (`font`, `color`, `type`, `motion`, `layout`) | theme | done — Dr. Tuba turuncu-krem (`marka-kimligi`) |
 | `stage` (L2/L3) with boards: questions, list, terminal, app | layout | done (`src/events/StageEvents.tsx`) |
 | `tag`, stage `source` / `figure` lines | overlay | done |
 | `kinetic` (L5) | event | done (`BrandEvents.tsx`) |
 | `subscribe` card (avatar, Abone ol → Abone olundu, bell, like) | event | done |
 | `screen` with presenter box, zooms, highlights | event | done |
+| `frame-break` — corner frame that cracks outward at `breakAt` | event | done (`ReelsEffects.tsx`) |
+| `story-glass` — frosted-glass warm side panel | event | done (`ReelsEffects.tsx`) |
+| `world-chart` — globe silhouette + regional growing bars | scene | done (`src/scenes/WorldChart.tsx`) |
 | board blocks `count` (count-up), `swap`, `bar` | event | todo — build when a video needs it |
 | `scene-*` bespoke animation scenes | scene | per video, see `animation-scenes.md` |
 
@@ -107,3 +110,18 @@ the bottom ~420 px and the right ~140 px are platform UI — nothing important t
 | **V5** | Kinetic thesis: 2–4 big words | the hook and the one thesis |
 
 Hook in the first 1–1.5 s; closing = follow card from `MARKA.md` synced to the spoken CTA.
+
+## 10. Reels effect vocabulary (Dr. Tuba kanalı)
+
+Six named techniques that define the channel's visual language for 9:16 content:
+
+| Teknik | Ne zaman | Nasıl |
+|---|---|---|
+| **frame-break** | Hook veya climax anı: söz "çerçeveyi kırıyor" | `frame-break` event (side:full, layer:2). Köşe braketleri dışa uçar `breakAt`'te; metin %6 büyür, hafif turuncu parıltı |
+| **story-glass** | V1 band: konuşmacının üstünde bir klinik not | `story-glass` event (side:left/right). Warm %76 opak panel + accent kenarlık + backdrop-blur simülasyonu |
+| **digital zoom** | Anahtar kelime söylendiği an punch-in | Teknik: scripts/90-shorts.mjs crop parametresi — grafik katmanında değil; sahne içinde `camera` parametresi (screen eventi) veya shorts reframing |
+| **world-chart** | Global veri (çalışma menşei, tedavi yaygınlığı) | `world-chart` event (side:full, layer:2). Basitleştirilmiş SVG dünya silüeti + yatay büyüyen bar'lar bölgeye göre |
+| **b-roll cover** | Klinik görüntü / cilt yakın plan üstüne bilgi | V3 layout: b-roll tam ekran + `story-glass` eventi üst-sağda. B-roll `sfx:false`; ses altta devam eder |
+| **type** (kinetic) | Hook'un ilk 1 s, bölüm geçişi, son thesis | `kinetic` (L5, word-reveal, accent kelime) veya `punch` (büyük sticker kelimeler). Türkçe uppercase: `toLocaleUpperCase("tr-TR")` |
+
+**Reels yerleşim kuralı:** `frame-break` ve `world-chart` tam ekrandır (layer:2). `story-glass` paneli 1920×1080 sisteminde `top:70, side:58` — 9:16 crop'ta üst banda denk gelir. `kinetic` ve `punch` mevcut layout kurallarına göre çalışır.
